@@ -1,0 +1,69 @@
+/* 1. RESET & VARIABLES */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --org: #ff5200; --ink: #282c3f; --brd: #e9e9ed; }
+body { font-family: 'Inter', sans-serif; color: var(--ink); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+.wrap { width: 90%; max-width: 1100px; margin: auto; }
+
+/* 2. HEADER & NAVBAR */
+.orange-shell { background: var(--org); color: #fff; position: relative; overflow: hidden; padding-bottom: 50px; }
+.navbar { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; position: relative; z-index: 10; }
+.logo { font-size: 24px; font-weight: 900; display: flex; align-items: center; gap: 8px; }
+.logo-icon { background: #fff; color: var(--org); width: 32px; height: 32px; display: grid; place-items: center; border-radius: 8px 8px 8px 2px; font-style: italic; }
+.nav-links a, .nav-buttons a { font-size: 13px; font-weight: 700; margin-left: 20px; }
+.sign-in { background: #000; padding: 10px 20px; border-radius: 8px; }
+
+/* 3. HERO SECTION */
+.hero { text-align: center; position: relative; z-index: 2; margin-top: 30px; }
+.hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; }
+.search-row { display: flex; gap: 12px; justify-content: center; margin: 25px auto; max-width: 700px; }
+.search-box { background: #fff; padding: 15px; border-radius: 10px; flex: 1; display: flex; align-items: center; }
+.search-box input { border: none; outline: none; width: 100%; font-size: 13px; color: #333; }
+.search-box.location { max-width: 250px; }
+
+/* 4. FLOATING SERVICE CARDS */
+.service-cards { display: flex; gap: 20px; justify-content: center; margin-top: 40px; position: relative; z-index: 5; }
+.service-card { background: #fff; color: var(--ink); padding: 20px; border-radius: 16px; flex: 1; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.1); overflow: hidden; }
+.service-card h2 { font-size: 18px; font-weight: 900; }
+.service-card p { font-size: 11px; color: #777; margin: 4px 0 10px; }
+.service-card strong { font-size: 10px; color: var(--org); background: #fff1e9; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+.service-card img { position: absolute; right: 0; bottom: 0; width: 50%; height: 80%; object-fit: contain; }
+
+/* 5. MAIN CONTENT (Categories) */
+.content { padding: 40px 0; }
+.section-title h2 { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
+.category-grid { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 10px; }
+.category { text-align: center; font-size: 13px; font-weight: 500; min-width: 90px; }
+.category img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 8px; transition: transform 0.2s; }
+.category:hover img { transform: translateY(-5px); }
+.grocery { margin-top: 40px; border-top: 1px solid var(--brd); padding-top: 30px; }
+
+/* 6. RESTAURANTS & APP BANNER */
+.restaurant-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
+.restaurant-card { border: 1px solid var(--brd); border-radius: 12px; overflow: hidden; }
+.restaurant-card img { width: 100%; height: 130px; object-fit: cover; }
+.restaurant-info { padding: 12px; }
+.restaurant-info h3 { font-size: 14px; display: flex; justify-content: space-between; }
+.restaurant-info p { font-size: 11px; color: #777; margin: 5px 0; }
+.restaurant-info b { display: block; font-size: 10px; background: #d8f8eb; color: #13864c; padding: 6px; margin-top: 8px; border-radius: 4px; }
+
+.app-banner { background: #171c20; color: #fff; padding: 40px; border-radius: 16px; text-align: center; margin: 40px 0; }
+.app-banner h2 { font-size: 24px; margin-bottom: 10px; }
+
+/* 7. CITIES & FOOTER */
+.city-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
+.city-grid a { border: 1px solid #ddd; padding: 12px; font-size: 12px; text-align: center; border-radius: 8px; }
+footer { background: #f0f0f6; padding: 40px; text-align: center; font-size: 13px; color: #555; margin-top: 40px; }
+
+/* 8. RESPONSIVE (MOBILE) */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 24px; }
+  .search-row, .service-cards { flex-direction: column; }
+  .restaurant-grid, .city-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links, .nav-buttons { display: none; }
+  .service-card { padding: 15px; height: 100px; }
+  .service-card img { width: 40%; }
+}
+@media (max-width: 480px) {
+  .restaurant-grid, .city-grid { grid-template-columns: 1fr; }
+}
