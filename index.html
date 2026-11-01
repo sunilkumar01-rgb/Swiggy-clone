@@ -1,261 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Responsive Swiggy-inspired landing page clone">
-  <title>Swiggy — Food, groceries and more</title>
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Link to External CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Clone</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header class="orange-shell">
-    <nav class="navbar wrap">
-      <a class="logo" href="#"><span class="logo-icon">S</span><span>Swiggy</span></a>
-      <div class="nav-links">
-        <a href="#dineout">Swiggy Corporate</a>
-        <a href="#footer">Partner with us</a>
-      </div>
-      <div class="nav-buttons">
-        <a class="get-app" href="#app">Get the App <b>↗</b></a>
-        <a class="sign-in" href="#footer">Sign in</a>
-      </div>
-      <button class="hamburger" aria-label="Open navigation">☰</button>
-    </nav>
+    <!-- HERO & HEADER SECTION -->
+    <header class="orange-shell">
+        <nav class="navbar wrap">
+            <div class="logo">
+                <span class="logo-icon">S</span> Swiggy
+            </div>
+            <div class="nav-links">
+                <a href="#">Swiggy Corporate</a>
+                <a href="#">Partner with us</a>
+                <a class="btn-outline" href="#">Get the App ↗</a>
+                <a class="btn-dark" href="#">Sign in</a>
+            </div>
+        </nav>
 
-    <section class="hero wrap">
-      <img class="hero-decoration decor-left" src="assets/hero-left.svg" alt="">
-      <img class="hero-decoration decor-right" src="assets/hero-right.svg" alt="">
-      <div class="hero-main">
-        <h1>Order food &amp; groceries. Discover<br class="desktop-break"> best restaurants. Swiggy it!</h1>
-        <div class="search-row">
-          <label class="search-box location">
-            <span class="pin">●</span>
-            <input placeholder="Enter your delivery location">
-            <span class="down">⌄</span>
-          </label>
-          <label class="search-box">
-            <input placeholder="Search for restaurant, item or more">
-            <span class="magnify">⌕</span>
-          </label>
+        <div class="hero wrap">
+            <h1>Order food & groceries. Discover<br> best restaurants. Swiggy it!</h1>
+            <div class="search-row">
+                <div class="search-box">
+                    <span>📍</span>
+                    <input type="text" placeholder="Enter your delivery location">
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for restaurant, item or more">
+                    <span>🔍</span>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="service-cards">
-        <a class="service-card" href="#food">
-          <div><h2>FOOD DELIVERY</h2><p>FROM RESTAURANTS</p><strong>UPTO 60% OFF</strong></div>
-          <img src="assets/card-food.svg" alt="Food delivery">
-          <span class="arrow">➜</span>
-        </a>
-        <a class="service-card" href="#instamart">
-          <div><h2>INSTAMART</h2><p>INSTANT GROCERY</p><strong>UPTO 60% OFF</strong></div>
-          <img src="assets/card-grocery.svg" alt="Grocery delivery">
-          <span class="arrow">➜</span>
-        </a>
-        <a class="service-card" href="#dineout">
-          <div><h2>DINEOUT</h2><p>EAT OUT &amp; SAVE MORE</p><strong>UPTO 50% OFF</strong></div>
-          <img src="assets/card-dineout.svg" alt="Dineout">
-          <span class="arrow">➜</span>
-        </a>
-      </div>
-    </section>
-  </header>
 
-  <!-- Main Content -->
-  <main class="wrap content">
-    <!-- Food Category Section -->
-    <section class="category-section" id="food">
-      <div class="section-title">
-        <h2>Order our best food options</h2>
-        <div class="arrows"><button>‹</button><button>›</button></div>
-      </div>
-      <div class="category-grid food-grid">
-        <a class="category" href="#"><img src="assets/north-indian.svg" alt=""><span>North Indian</span></a>
-        <a class="category" href="#"><img src="assets/pizza.svg" alt=""><span>Pizza</span></a>
-        <a class="category" href="#"><img src="assets/burger.svg" alt=""><span>Burger</span></a>
-        <a class="category" href="#"><img src="assets/cake.svg" alt=""><span>Cake</span></a>
-        <a class="category" href="#"><img src="assets/biryani.svg" alt=""><span>Biryani</span></a>
-        <a class="category" href="#"><img src="assets/rolls.svg" alt=""><span>Rolls</span></a>
-        <a class="category" href="#"><img src="assets/dessert.svg" alt=""><span>Desserts</span></a>
-        <a class="category" href="#"><img src="assets/south-indian.svg" alt=""><span>South Indian</span></a>
-        <a class="category" href="#"><img src="assets/paratha.svg" alt=""><span>Paratha</span></a>
-        <a class="category" href="#"><img src="assets/pasta.svg" alt=""><span>Pasta</span></a>
-        <a class="category" href="#"><img src="assets/icecream.svg" alt=""><span>Ice Cream</span></a>
-        <a class="category" href="#"><img src="assets/pastry.svg" alt=""><span>Pastry</span></a>
-        <a class="category" href="#"><img src="assets/rasmalai.svg" alt=""><span>Rasmalai</span></a>
-        <a class="category" href="#"><img src="assets/coffee.svg" alt=""><span>Coffee</span></a>
-        <a class="category" href="#"><img src="assets/noodles.svg" alt=""><span>Noodles</span></a>
-        <a class="category" href="#"><img src="assets/rolls.svg" alt=""><span>Wraps</span></a>
-      </div>
-    </section>
-
-    <!-- Grocery Section -->
-    <section class="category-section grocery" id="instamart">
-      <div class="section-title">
-        <h2>Shop groceries on Instamart</h2>
-        <div class="arrows"><button>‹</button><button>›</button></div>
-      </div>
-      <div class="category-grid grocery-grid">
-        <a class="category" href="#"><img src="assets/vegetables.svg" alt=""><span>Fresh Vegetables</span></a>
-        <a class="category" href="#"><img src="assets/fruits.svg" alt=""><span>Fresh Fruits</span></a>
-        <a class="category" href="#"><img src="assets/dairy.svg" alt=""><span>Dairy, Bread<br>and Eggs</span></a>
-        <a class="category" href="#"><img src="assets/rice.svg" alt=""><span>Rice, Atta and<br>Dals</span></a>
-        <a class="category" href="#"><img src="assets/masala.svg" alt=""><span>Masalas and<br>Dry Fruits</span></a>
-        <a class="category" href="#"><img src="assets/oil.svg" alt=""><span>Oils and Ghee</span></a>
-        <a class="category" href="#"><img src="assets/munchies.svg" alt=""><span>Munchies</span></a>
-        <a class="category" href="#"><img src="assets/drinks.svg" alt=""><span>Cold Drinks</span></a>
-        <a class="category" href="#"><img src="assets/personal-care.svg" alt=""><span>Personal Care</span></a>
-        <a class="category" href="#"><img src="assets/household.svg" alt=""><span>Household</span></a>
-      </div>
-    </section>
-
-    <!-- Dineout Section -->
-    <section class="dineout-section" id="dineout">
-      <div class="section-title">
-        <h2>Discover best restaurants on Dineout</h2>
-        <div class="arrows"><button>‹</button><button>›</button></div>
-      </div>
-      <div class="restaurant-grid">
-        <article class="restaurant-card">
-          <img src="assets/restaurant-1.svg" alt="Restaurant food">
-          <div class="restaurant-info">
-            <h3>Rolls Mania</h3><span>★ 3.5</span>
-            <p>Rolls · Beverages</p>
-            <small>Paratha, Mughlai, Tandoori, Rolls</small>
-            <b>Flat 30% off on pre-booking</b>
-            <em>Up to 10% off with bank offers</em>
-          </div>
-        </article>
-        <article class="restaurant-card">
-          <img src="assets/restaurant-2.svg" alt="Restaurant interior">
-          <div class="restaurant-info">
-            <h3>The Yellow Chilli</h3><span>★ 4.3</span>
-            <p>North Indian · Kebab</p>
-            <small>Raja Nagar, Noida</small>
-            <b>Flat 20% off on pre-booking</b>
-            <em>Up to 10% off with bank offers</em>
-          </div>
-        </article>
-        <article class="restaurant-card">
-          <img src="assets/restaurant-3.svg" alt="Indian meal">
-          <div class="restaurant-info">
-            <h3>Jain Shudh Bhojnalaya</h3><span>★ 4.0</span>
-            <p>North Indian · Italian</p>
-            <small>Ambedkar Road, Noida</small>
-            <b>Flat 10% off on walk-in</b>
-            <em>Up to 10% off with bank offers</em>
-          </div>
-        </article>
-        <article class="restaurant-card">
-          <img src="assets/restaurant-4.svg" alt="Dessert and drink">
-          <div class="restaurant-info">
-            <h3>Giani's</h3><span>★ 4.1</span>
-            <p>Ice Cream · Beverages</p>
-            <small>Raj Nagar, Noida</small>
-            <b>Flat 25% off on pre-booking</b>
-            <em>Up to 10% off with bank offers</em>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- App Banner -->
-    <section class="app-banner" id="app">
-      <div class="app-brand"><span class="mini-logo">S</span> Swiggy</div>
-      <h2>Get the Swiggy App now!</h2>
-      <p>For best offers and discounts curated specially for you.</p>
-      <div class="phone-art">
-        <div class="phone-camera"></div>
-        <div class="qr"></div>
-        <b>Scan to download</b>
-      </div>
-      <span class="floating-food food-one">🍔</span>
-      <span class="floating-food food-two">🍕</span>
-      <span class="floating-food food-three">🥗</span>
-    </section>
-
-    <!-- Cities Section -->
-    <section class="city-section">
-      <h2>Cities with food delivery</h2>
-      <div class="city-grid">
-        <a href="#">Order food online in Bangalore</a>
-        <a href="#">Order food online in Gurgaon</a>
-        <a href="#">Order food online in Hyderabad</a>
-        <a href="#">Order food online in Delhi</a>
-        <a href="#">Order food online in Mumbai</a>
-        <a href="#">Order food online in Pune</a>
-        <a href="#">Order food online in Kolkata</a>
-        <a href="#">Order food online in Chennai</a>
-        <a href="#">Order food online in Ahmedabad</a>
-        <a href="#">Order food online in Chandigarh</a>
-        <a href="#">Order food online in Jaipur</a>
-        <a class="show-more" href="#">Show More⌄</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="wrap footer-main">
-      <div class="footer-brand">
-        <a class="logo" href="#"><span class="logo-icon">S</span><span>Swiggy</span></a>
-        <small>© 2026 Swiggy Limited</small>
-      </div>
-      <div class="footer-col">
-        <h3>Company</h3>
-        <a>About Us</a>
-        <a>Swiggy Corporate</a>
-        <a>Careers</a>
-        <a>Team</a>
-        <a>Swiggy One</a>
-        <a>Swiggy Instamart</a>
-      </div>
-      <div class="footer-col">
-        <h3>Contact us</h3>
-        <a>Help &amp; Support</a>
-        <a>Partner With Us</a>
-        <a>Ride With Us</a>
-        <h3 class="subhead">Legal</h3>
-        <a>Terms &amp; Conditions</a>
-        <a>Cookie Policy</a>
-        <a>Privacy Policy</a>
-      </div>
-      <div class="footer-col">
-        <h3>Available in:</h3>
-        <a>Bangalore</a>
-        <a>Gurgaon</a>
-        <a>Hyderabad</a>
-        <a>Delhi</a>
-        <a>Mumbai</a>
-        <a>Pune</a>
-        <a class="city-count">685 cities⌄</a>
-      </div>
-      <div class="footer-col">
-        <h3>Life at Swiggy</h3>
-        <a>Explore With Swiggy</a>
-        <a>Swiggy News</a>
-        <a>Snackables</a>
-        <h3 class="subhead">Social Links</h3>
-        <div class="socials">
-          <a>in</a><a>◎</a><a>f</a><a>𝕏</a><a>♥</a>
+        <!-- 3 Main Cards -->
+        <div class="service-cards wrap">
+            <div class="card">
+                <h2>FOOD DELIVERY</h2>
+                <p>FROM RESTAURANTS</p>
+                <span class="tag">UPTO 60% OFF</span>
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200&h=200&fit=crop" alt="Food">
+                <div class="arrow">→</div>
+            </div>
+            <div class="card">
+                <h2>INSTAMART</h2>
+                <p>INSTANT GROCERY</p>
+                <span class="tag">UPTO 60% OFF</span>
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=200&h=200&fit=crop" alt="Grocery">
+                <div class="arrow">→</div>
+            </div>
+            <div class="card">
+                <h2>DINEOUT</h2>
+                <p>EAT OUT & SAVE MORE</p>
+                <span class="tag">UPTO 50% OFF</span>
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=200&h=200&fit=crop" alt="Dineout">
+                <div class="arrow">→</div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="wrap footer-bottom">
-      <strong>For better experience, download the Swiggy app now</strong>
-      <div>
-        <a href="#">▶ Download on the App Store</a>
-        <a href="#">▶ GET IT ON Google Play</a>
-      </div>
-    </div>
-  </footer>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="wrap content">
+        
+        <!-- Food Categories -->
+        <section class="category-section">
+            <div class="section-header">
+                <h2>Order our best food options</h2>
+                <div class="arrows"><button>←</button><button>→</button></div>
+            </div>
+            <div class="category-grid">
+                <div class="category"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=100&h=100&fit=crop" alt=""><span>North Indian</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&h=100&fit=crop" alt=""><span>Pizza</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=100&h=100&fit=crop" alt=""><span>Burger</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=100&h=100&fit=crop" alt=""><span>Cake</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=100&h=100&fit=crop" alt=""><span>Biryani</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=100&h=100&fit=crop" alt=""><span>Rolls</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=100&h=100&fit=crop" alt=""><span>Desserts</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=100&h=100&fit=crop" alt=""><span>South Indian</span></div>
+            </div>
+        </section>
+
+        <!-- Grocery Categories -->
+        <section class="category-section">
+            <div class="section-header">
+                <h2>Shop groceries on Instamart</h2>
+                <div class="arrows"><button>←</button><button>→</button></div>
+            </div>
+            <div class="category-grid grocery">
+                <div class="category"><img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=100&h=100&fit=crop" alt=""><span>Fresh Vegetables</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=100&h=100&fit=crop" alt=""><span>Fresh Fruits</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=100&h=100&fit=crop" alt=""><span>Dairy, Bread & Eggs</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=100&h=100&fit=crop" alt=""><span>Rice, Atta & Dals</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=100&h=100&fit=crop" alt=""><span>Masalas & Dry Fruits</span></div>
+                <div class="category"><img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=100&h=100&fit=crop" alt=""><span>Oils and Ghee</span></div>
+            </div>
+        </section>
+
+        <!-- Restaurants -->
+        <section class="category-section">
+            <div class="section-header">
+                <h2>Discover best restaurants on Dineout</h2>
+                <div class="arrows"><button>←</button><button>→</button></div>
+            </div>
+            <div class="restaurant-grid">
+                <div class="restaurant-card">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop" alt="Restaurant">
+                    <div class="info">
+                        <h3>Bombay Rendezvous <span>★ 4.3</span></h3>
+                        <p>North Indian, Mughlai, Kebab</p>
+                        <small>Sector 29, Noida</small>
+                        <b>Flat 20% off on pre-booking</b>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=300&h=200&fit=crop" alt="Restaurant">
+                    <div class="info">
+                        <h3>The Yellow Chilli <span>★ 4.2</span></h3>
+                        <p>North Indian, Kebab</p>
+                        <small>Raja Nagar, Noida</small>
+                        <b>Flat 20% off on pre-booking</b>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&h=200&fit=crop" alt="Restaurant">
+                    <div class="info">
+                        <h3>Jain Shudh Bhojnalaya <span>★ 4.0</span></h3>
+                        <p>North Indian, Italian</p>
+                        <small>Ambedkar Road, Noida</small>
+                        <b>Flat 10% off on walk-in</b>
+                    </div>
+                </div>
+                <div class="restaurant-card">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=300&h=200&fit=crop" alt="Restaurant">
+                    <div class="info">
+                        <h3>Giani's <span>★ 4.1</span></h3>
+                        <p>Ice Cream, Beverages</p>
+                        <small>Raj Nagar, Noida</small>
+                        <b>Flat 25% off on pre-booking</b>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Banner -->
+        <section class="app-banner">
+            <div class="app-brand"><span class="logo-icon">S</span> Swiggy</div>
+            <h2>Get the Swiggy App now!</h2>
+            <p>For best offers and discounts curated specially for you.</p>
+            
+            <div class="qr-section">
+                <div class="phone">
+                    <div class="qr-code"></div>
+                    <span>Scan to download</span>
+                </div>
+                <img class="floating burger" src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="burger">
+                <img class="floating pizza" src="https://cdn-icons-png.flaticon.com/512/6978/6978255.png" alt="pizza">
+            </div>
+        </section>
+
+        <!-- Cities -->
+        <section class="category-section">
+            <h2 class="city-title">Cities with food delivery</h2>
+            <div class="city-grid">
+                <a href="#">Order food online in Bangalore</a>
+                <a href="#">Order food online in Gurgaon</a>
+                <a href="#">Order food online in Hyderabad</a>
+                <a href="#">Order food online in Delhi</a>
+                <a href="#">Order food online in Mumbai</a>
+                <a href="#">Order food online in Pune</a>
+                <a href="#">Order food online in Kolkata</a>
+                <a href="#">Order food online in Chennai</a>
+                <a href="#">Order food online in Ahmedabad</a>
+                <a href="#">Order food online in Chandigarh</a>
+                <a href="#">Order food online in Jaipur</a>
+                <a href="#" class="show-more">Show More ⌄</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap footer-grid">
+            <div class="footer-col">
+                <div class="logo"><span class="logo-icon">S</span> Swiggy</div>
+                <small>© 2026 Swiggy Limited</small>
+            </div>
+            <div class="footer-col">
+                <h3>Company</h3>
+                <a href="#">About Us</a>
+                <a href="#">Swiggy Corporate</a>
+                <a href="#">Careers</a>
+                <a href="#">Team</a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact us</h3>
+                <a href="#">Help & Support</a>
+                <a href="#">Partner With Us</a>
+                <a href="#">Ride With Us</a>
+                <h3 class="mt-10">Legal</h3>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-col">
+                <h3>Available in:</h3>
+                <a href="#">Bangalore</a>
+                <a href="#">Gurgaon</a>
+                <a href="#">Hyderabad</a>
+                <a href="#">Delhi</a>
+                <a href="#">Mumbai</a>
+                <a href="#">Pune</a>
+                <a href="#" class="city-count">685 cities ⌄</a>
+            </div>
+            <div class="footer-col">
+                <h3>Life at Swiggy</h3>
+                <a href="#">Explore With Swiggy</a>
+                <a href="#">Swiggy News</a>
+                <a href="#">Snackables</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

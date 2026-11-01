@@ -1,69 +1,565 @@
-/* 1. RESET & VARIABLES */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root { --org: #ff5200; --ink: #282c3f; --brd: #e9e9ed; }
-body { font-family: 'Inter', sans-serif; color: var(--ink); overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
-.wrap { width: 90%; max-width: 1100px; margin: auto; }
-
-/* 2. HEADER & NAVBAR */
-.orange-shell { background: var(--org); color: #fff; position: relative; overflow: hidden; padding-bottom: 50px; }
-.navbar { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; position: relative; z-index: 10; }
-.logo { font-size: 24px; font-weight: 900; display: flex; align-items: center; gap: 8px; }
-.logo-icon { background: #fff; color: var(--org); width: 32px; height: 32px; display: grid; place-items: center; border-radius: 8px 8px 8px 2px; font-style: italic; }
-.nav-links a, .nav-buttons a { font-size: 13px; font-weight: 700; margin-left: 20px; }
-.sign-in { background: #000; padding: 10px 20px; border-radius: 8px; }
-
-/* 3. HERO SECTION */
-.hero { text-align: center; position: relative; z-index: 2; margin-top: 30px; }
-.hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; }
-.search-row { display: flex; gap: 12px; justify-content: center; margin: 25px auto; max-width: 700px; }
-.search-box { background: #fff; padding: 15px; border-radius: 10px; flex: 1; display: flex; align-items: center; }
-.search-box input { border: none; outline: none; width: 100%; font-size: 13px; color: #333; }
-.search-box.location { max-width: 250px; }
-
-/* 4. FLOATING SERVICE CARDS */
-.service-cards { display: flex; gap: 20px; justify-content: center; margin-top: 40px; position: relative; z-index: 5; }
-.service-card { background: #fff; color: var(--ink); padding: 20px; border-radius: 16px; flex: 1; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.1); overflow: hidden; }
-.service-card h2 { font-size: 18px; font-weight: 900; }
-.service-card p { font-size: 11px; color: #777; margin: 4px 0 10px; }
-.service-card strong { font-size: 10px; color: var(--org); background: #fff1e9; padding: 4px 8px; border-radius: 4px; display: inline-block; }
-.service-card img { position: absolute; right: 0; bottom: 0; width: 50%; height: 80%; object-fit: contain; }
-
-/* 5. MAIN CONTENT (Categories) */
-.content { padding: 40px 0; }
-.section-title h2 { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
-.category-grid { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 10px; }
-.category { text-align: center; font-size: 13px; font-weight: 500; min-width: 90px; }
-.category img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 8px; transition: transform 0.2s; }
-.category:hover img { transform: translateY(-5px); }
-.grocery { margin-top: 40px; border-top: 1px solid var(--brd); padding-top: 30px; }
-
-/* 6. RESTAURANTS & APP BANNER */
-.restaurant-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 20px; }
-.restaurant-card { border: 1px solid var(--brd); border-radius: 12px; overflow: hidden; }
-.restaurant-card img { width: 100%; height: 130px; object-fit: cover; }
-.restaurant-info { padding: 12px; }
-.restaurant-info h3 { font-size: 14px; display: flex; justify-content: space-between; }
-.restaurant-info p { font-size: 11px; color: #777; margin: 5px 0; }
-.restaurant-info b { display: block; font-size: 10px; background: #d8f8eb; color: #13864c; padding: 6px; margin-top: 8px; border-radius: 4px; }
-
-.app-banner { background: #171c20; color: #fff; padding: 40px; border-radius: 16px; text-align: center; margin: 40px 0; }
-.app-banner h2 { font-size: 24px; margin-bottom: 10px; }
-
-/* 7. CITIES & FOOTER */
-.city-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
-.city-grid a { border: 1px solid #ddd; padding: 12px; font-size: 12px; text-align: center; border-radius: 8px; }
-footer { background: #f0f0f6; padding: 40px; text-align: center; font-size: 13px; color: #555; margin-top: 40px; }
-
-/* 8. RESPONSIVE (MOBILE) */
-@media (max-width: 768px) {
-  .hero h1 { font-size: 24px; }
-  .search-row, .service-cards { flex-direction: column; }
-  .restaurant-grid, .city-grid { grid-template-columns: repeat(2, 1fr); }
-  .nav-links, .nav-buttons { display: none; }
-  .service-card { padding: 15px; height: 100px; }
-  .service-card img { width: 40%; }
+/* --- RESET & VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
-@media (max-width: 480px) {
-  .restaurant-grid, .city-grid { grid-template-columns: 1fr; }
+
+:root {
+    --orange: #ff5200;
+    --ink: #282c3f;
+    --gray: #686b78;
+    --border: #e9e9ed;
+}
+
+body {
+    color: var(--ink);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrap {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* --- HEADER & NAVBAR --- */
+.orange-shell {
+    background: var(--orange);
+    color: #fff;
+    padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    background: #fff;
+    color: var(--orange);
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px 10px 10px 4px;
+    font-style: italic;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.btn-dark {
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 40px 0 100px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.search-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+    max-width: 750px;
+    margin-inline: auto;
+}
+
+.search-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+}
+
+/* --- MAIN SERVICE CARDS --- */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    margin-top: -80px;
+    z-index: 5;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #282c3f;
+}
+
+.card p {
+    font-size: 12px;
+    color: #8a8a8f;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.card .tag {
+    display: inline-block;
+    background: #fff1e9;
+    color: var(--orange);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 5px 8px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.card img {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card .arrow {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    background: var(--orange);
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+/* --- CONTENT SECTIONS --- */
+.content {
+    padding: 40px 0;
+}
+
+.category-section {
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.arrows button {
+    border: none;
+    background: #f0f0f1;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #555;
+}
+
+.category-grid {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.category {
+    text-align: center;
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3d3d44;
+    cursor: pointer;
+}
+
+.category img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.category:hover img {
+    transform: scale(1.1);
+}
+
+.category-grid.grocery img {
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+/* --- RESTAURANTS --- */
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.restaurant-card {
+    border: 1px solid #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.restaurant-card>img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.restaurant-card .info {
+    padding: 12px;
+}
+
+.restaurant-card h3 {
+    font-size: 14px;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restaurant-card h3 span {
+    background: #178f50;
+    color: #fff;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 6px;
+}
+
+.restaurant-card p {
+    font-size: 12px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.restaurant-card small {
+    font-size: 10px;
+    color: #999;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.restaurant-card b {
+    display: block;
+    font-size: 10px;
+    background: #d8f8eb;
+    color: #13864c;
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* --- APP BANNER --- */
+.app-banner {
+    background: #171c20;
+    color: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+    height: 220px;
+}
+
+.app-brand {
+    font-size: 12px;
+    color: var(--orange);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.app-brand .logo-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.app-banner h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.app-banner p {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.qr-section {
+    position: absolute;
+    right: 10%;
+    top: 15%;
+}
+
+.phone {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 4px solid #333;
+    text-align: center;
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    background: repeating-conic-gradient(#111 0 25%, #fff 0 50%) 0/10px 10px;
+    border: 2px solid #000;
+    margin: auto;
+}
+
+.phone span {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.floating {
+    position: absolute;
+    width: 60px;
+}
+
+.floating.burger {
+    left: -50px;
+    bottom: 10px;
+}
+
+.floating.pizza {
+    right: -50px;
+    top: 10px;
+}
+
+/* --- CITIES --- */
+.city-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.city-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.city-grid a {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #555;
+}
+
+.show-more {
+    color: var(--orange) !important;
+    font-weight: bold;
+    border-color: var(--orange) !important;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #f0f0f6;
+    padding: 50px 0;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-col h3 {
+    font-size: 13px;
+    color: #282c3f;
+    margin-bottom: 5px;
+}
+
+.footer-col a {
+    font-size: 12px;
+    color: #777;
+    cursor: pointer;
+}
+
+.footer-col small {
+    font-size: 11px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.mt-10 {
+    margin-top: 15px;
+}
+
+.city-count {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 900px) {
+
+    .service-cards,
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .city-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .qr-section,
+    .floating {
+        display: none;
+    }
+
+    .app-banner {
+        text-align: center;
+        align-items: center;
+        height: auto;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links a:not(.btn-outline) {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .search-row {
+        flex-direction: column;
+    }
+
+    .service-cards,
+    .restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-cards {
+        margin-top: -30px;
+    }
+
+    .category-grid {
+        gap: 15px;
+    }
+
+    .category {
+        min-width: 75px;
+    }
+
+    .category img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .city-grid {
+        grid-template-columns: 1fr;
+    }
 }
